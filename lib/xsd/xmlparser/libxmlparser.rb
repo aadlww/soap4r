@@ -25,7 +25,7 @@ class LibXMLParser < XSD::XMLParser::Parser
     end
     # XMLParser passes a String in utf-8.
     @charset = 'utf-8'
-    @parser = XML::Parser::Context.new
+    @parser = XML::SaxParser.new
     @parser.callbacks = self
     @parser.string = string
     @parser.parse
